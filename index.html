@@ -169,8 +169,8 @@ function initFramebuffers() {
     var internalFormat = isWebGL2 ? gl.RGBA16F : gl.RGBA;
     var internalFormatRG = isWebGL2 ? gl.RG16F : gl.RGBA;
     var formatRG = isWebGL2 ? gl.RG : gl.RGBA;
-    var texType = isWebGL2 ? gl.HALF_FLOAT : halfFloat.HALF_FLOAT_OES;
-
+    var texType = gl.HALF_FLOAT;
+//     var texType = isWebGL2 ? gl.HALF_FLOAT : halfFloat.HALF_FLOAT_OES;
     density = createDoubleFBO(0, textureWidth, textureHeight, internalFormat, gl.RGBA, texType, support_linear_float ? gl.LINEAR : gl.NEAREST);
     velocity = createDoubleFBO(2, textureWidth, textureHeight, internalFormatRG, formatRG, texType, support_linear_float ? gl.LINEAR : gl.NEAREST);
     divergence = createFBO(4, textureWidth, textureHeight, internalFormatRG, formatRG, texType, gl.NEAREST);
